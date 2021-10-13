@@ -1,0 +1,67 @@
+:root {
+  --tokenOffsetLeft: 20px;
+  --tokenOffsetTop: -100px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: whitesmoke;
+  height: 100vh;
+  overflow: hidden;
+}
+
+h1 {
+  text-align: center;
+  margin: 50px 0 0 0;
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(7, 120px);
+  grid-template-rows: repeat(7, 120px);
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 120px;
+}
+
+.boardcell {
+  margin: 20px;
+  box-shadow: 0 0 0 20px blue;
+}
+
+.boardcell:after {
+  content: "";
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  box-shadow: 0 0 0 20px blue;
+  border-radius: 50%;
+}
+
+.player {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  z-index: -1;
+  top: var(--tokenOffsetTop);
+  left: var(--tokenOffsetLeft);
+  border-radius: 50%;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.473);
+  transition: 0.3s;
+}
+
+.player1 {
+  background: rgb(255, 238, 0);
+  border: 2px solid gold;
+}
+
+.player2 {
+  background: red;
+  border: 2px solid orangered;
+}
